@@ -3,6 +3,13 @@ class Game {
     this.player1 = new Player("Human", '🤓');
     this.player2 = new Player("Computer", "💻");
     this.gameType;
+    this.choices;
+  }
+
+  setChoices() {
+    if (this.gameType === 'classic') {
+      this.choices = ['rock', 'paper', 'scissors']
+    }
   }
 
   checkWin(selection, computerChoice) {
