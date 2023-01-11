@@ -5,8 +5,7 @@ class Game {
     this.gameType;
   }
 
-  checkWin(selection) {
-    var computerChoice = 'paper'
+  checkWin(selection, computerChoice) {
     if (selection === computerChoice) {
       return 'draw';
     } else if (selection === 'rock' && computerChoice === 'scissors') {
