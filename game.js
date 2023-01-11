@@ -23,7 +23,7 @@ class Game {
     }
   }
 
-  resetGame() {
+  resetGameType() {
     this.gameType = '';
   }
 }
