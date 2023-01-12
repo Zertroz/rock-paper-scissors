@@ -7,7 +7,7 @@ main {
   text-align: center;
 }
 
-.game-board {
+.game-board, .game-board-variant {
   display: flex;
   justify-content: space-between;
 }
