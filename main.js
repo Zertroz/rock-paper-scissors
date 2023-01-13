@@ -7,17 +7,21 @@ var variantGame = document.querySelector('.variant')
 var gameButtons = document.querySelector('.game-buttons')
 var subtitle = document.querySelector('h2')
 var newGameBtn = document.querySelector('.new-game-btn')
+var selectionElements = document.querySelectorAll('.selection')
+var gameResult = document.querySelector('.game-result')
 
 var currentGame = new Game
 
 classicGame.addEventListener('click', startClassic)
 variantGame.addEventListener('click', startVariant)
 gameBoard.addEventListener('click', function() {
-  makeChoices(makeComputerChoice())
+  currentGame.makeComputerChoice()
+  makeChoices(currentGame.player2.choice)
   setTimeout(resetGameBoard, 2000)
 })
 gameBoardVar.addEventListener('click', function() {
-  makeChoices(makeComputerChoice())
+  currentGame.makeComputerChoice()
+  makeChoices(currentGame.player2.choice)
   setTimeout(resetGameBoard, 2000)
 })
 newGameBtn.addEventListener('click', returnNewGame)
@@ -39,43 +43,44 @@ function startVariant() {
 }
 
 function makeChoices(cSelection) {
-  var pSelection = event.target.className
+  var pSelection = currentGame.makePlayerChoice(event.target.id)
   if (currentGame.choices.includes(pSelection)) {
     currentGame.checkWin(pSelection, cSelection)
   }
-  if (pSelection === 'rock' || pSelection === 'paper' || pSelection === 'scissors') {
-    gameBoard.innerHTML = `
-      <p>${pSelection}</p>
-      <p>${cSelection}</p>`
-    wins.innerText = `Wins: ${currentGame.player1.wins}`
-    cWins.innerText = `Wins: ${currentGame.player2.wins}`
-  } else if (pSelection === 'samurai' || pSelection === 'shinobi' || pSelection === 'brush' || pSelection === 'oni' || pSelection === 'ronin') {
-    gameBoardVar.innerHTML = `
-      <p>${pSelection}</p>
-      <p>${cSelection}</p>`
+  showWinner(pSelection, cSelection)
+  displayWin()
+}
+
+function showWinner(pSelection, cSelection) {
+  if (currentGame.choices.includes(pSelection)) {
+    for (var i = 0; i < 8; i++) {
+      hide(selectionElements[i])
+    }
+    var pChoice = document.getElementById(pSelection)
+    var cChoice = document.getElementById(cSelection)
+    show(pChoice)
+    show(cChoice)
     wins.innerText = `Wins: ${currentGame.player1.wins}`
     cWins.innerText = `Wins: ${currentGame.player2.wins}`
   }
-  
 }
 
-function makeComputerChoice() {
-  var computerChoices = currentGame.choices
-  return computerChoices[Math.floor(Math.random() * computerChoices.length)]
+function displayWin() {
+  show(gameResult)
+  if (currentGame.result === 'win') {
+    gameResult.innerHTML = `<h3>You Won!</h3>`
+  } else if (currentGame.result === 'lose') {
+    gameResult.innerHTML = `<h3>You Lose!</h3>`
+  } else if (currentGame.result === 'draw') {
+    gameResult.innerHTML = `<h3>Draw!</h3>`
+  }
 }
 
 function resetGameBoard () {
-  if (currentGame.gameType === 'classic') {
-    gameBoard.innerHTML = `<p class="rock">Rock</p>
-    <p class="paper">Paper</p>
-    <p class="scissors">Scissors</p>`
-  } else if (currentGame.gameType === 'variant') {
-    gameBoardVar.innerHTML = `<p class="brush">Brush</p>
-    <p class="samurai">Samurai</p>
-    <p class="ronin">Ronin</p>
-    <p class="shinobi">Shinobi</p>
-    <p class="oni">Oni</p>`
+  for (var i = 0; i < 8; i++) {
+    show(selectionElements[i])
   }
+  hide(gameResult)
 }
 
 function returnNewGame() {
