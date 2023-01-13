@@ -4,6 +4,7 @@ class Game {
     this.player2 = new Player("Computer", "💻");
     this.gameType;
     this.choices;
+    this.result;
   }
 
   setChoices(gameType) {
@@ -15,58 +16,68 @@ class Game {
     };
   };
 
+  makePlayerChoice(target) {
+    this.player1.choice = target
+    return this.player1.choice
+  }
+
+  makeComputerChoice() {
+    this.player2.choice = this.choices[Math.floor(Math.random() * this.choices.length)]
+  }
+
   runGame(selection, computerChoice) {
     if (selection === computerChoice) {
-      return 'draw';
+      this.result = 'draw';
     } else if (selection === 'rock' && computerChoice === 'scissors') {
       this.player1.wins ++
-      return 'win';
+      this.result = 'win';
     } else if (selection === 'paper' && computerChoice === 'rock') {
       this.player1.wins ++
-      return 'win';
+      this.result = 'win';
     } else if (selection === 'scissors' && computerChoice === 'paper') {
       this.player1.wins ++
-      return 'win';
+      this.result = 'win';
     } else {
       this.player2.wins ++
-      return "lose";
+      this.result = "lose";
     }
   }
 
   runGameVar(selection, computerChoice) {
     if (selection === computerChoice) {
-      return 'draw';
+      this.result = 'draw';
     } else if (selection === 'brush' && (computerChoice === 'shinobi' || computerChoice === 'oni')) {
       this.player1.wins ++;
-      return 'win';
+      this.result = 'win';
     } else if (selection === 'samurai' && (computerChoice === 'oni' || computerChoice === 'brush')) {
       this.player1.wins ++;
-      return 'win';
+      this.result = 'win';
     } else if (selection === 'ronin' && (computerChoice === 'samurai' || computerChoice === 'brush')) {
       this.player1.wins ++;
-      return 'win';
+      this.result = 'win';
     } else if (selection === 'oni' && (computerChoice === 'ronin' || computerChoice === 'shinobi')) {
       this.player1.wins ++;
-      return 'win';
+      this.result = 'win';
     } else if (selection === 'shinobi' && (computerChoice === 'samurai' || computerChoice === 'ronin')) {
       this.player1.wins ++;
-      return 'win';
+      this.result = 'win';
     } else {
       this.player2.wins ++;
-      return "lose";
+      this.result = "lose";
     }
   }
 
   checkWin(pSelection, cSelection) {
     if (this.gameType === 'classic') {
-      this.runGame(pSelection, cSelection)
+      return this.runGame(pSelection, cSelection);
     } else if (this.gameType === 'variant') {
-      this.runGameVar(pSelection, cSelection)
-    }
-  }
+      return this.runGameVar(pSelection, cSelection);
+    };
+  };
 
   resetGameType() {
     this.gameType = '';
     this.choices = '';
+    this.result = '';
   }
 }

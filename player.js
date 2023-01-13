@@ -3,5 +3,6 @@ class Player {
     this.name = name;
     this.icon = icon;
     this.wins = 0;
+    this.choice;
   }
 }
