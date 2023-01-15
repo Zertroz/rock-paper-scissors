@@ -31,7 +31,7 @@ function startClassic() {
   hide(gameButtons)
   show(gameBoard)
   show(newGameBtn)
-  subtitle.innerText = 'Choose Your Fighter!'
+  subtitle.innerText = '始め！！'
 }
 
 function startVariant() {
@@ -39,7 +39,7 @@ function startVariant() {
   hide(gameButtons)
   show(gameBoardVar)
   show(newGameBtn)
-  subtitle.innerText = 'Choose Your Fighter!'
+  subtitle.innerText = '始め！！'
 }
 
 function makeChoices(cSelection) {
@@ -84,7 +84,7 @@ function resetGameBoard () {
   for (var i = 0; i < 8; i++) {
     show(selectionElements[i])
   }
-  subtitle.innerHTML = 'Choose Your Fighter!'
+  subtitle.innerHTML = '始め！！'
 }
 
 function returnNewGame() {
