@@ -1,15 +1,95 @@
+* {
+  font-family: 'Shippori Mincho B1', serif;
+}
 body {
+  display: flex;
+  justify-content: space-around;
+  background-image: linear-gradient(#fbf6c3, #d8c6a2);  
+}
+
+main {
+  border: black solid 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 98vh;
+  width: 75vw;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 35px
+}
+
+h5, h1, h2 {
+  margin: 0%;
+}
+
+.game-board, .game-board-variant {
+  margin-top: 30px;
+  width: inherit;
   display: flex;
   justify-content: space-around;
 }
 
-main {
-  text-align: center;
+.selection {
+  height: 20vh;
+  width: 20vh;
 }
 
-.game-board, .game-board-variant {
-  display: flex;
-  justify-content: space-between;
+img {
+  height: 100%;
+  width: 100%;
+}
+
+#rock {
+  background: url(./src/rock.jpeg);
+  background-size: cover;
+}
+
+#paper {
+  background: url(./src/lines-paper.jpeg);
+  background-size: cover;
+}
+
+#scissors {
+  background: url(./src/scissors\ copy.jpeg);
+  background-size: cover;
+}
+
+#brush {
+  background: url(./src/brush.jpeg);
+  background-size: cover;
+}
+
+#samurai {
+  background: url(./src/samurai.jpeg);
+  background-size: cover;
+}
+
+#ronin {
+  background: url(./src/ronin.jpg);
+  background-size: cover;
+}
+
+#shinobi {
+  background: url(./src/shinobi.jpg);
+  background-size: cover;
+}
+
+#oni {
+  background: url(./src/oni.jpeg);
+  background-size: cover;
 }
 
 .hidden {
