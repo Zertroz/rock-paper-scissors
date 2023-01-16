@@ -12,23 +12,35 @@
   </head>
   <body>
     <aside class="player-1">
-      <h3>Player 1</h3>
       <h3>🤓</h3>
+      <h3 class="player-name">Player 1</h3>
       <p class="wins">Wins: 0</p>
       <button class="new-game-btn hidden">New Game</button>
     </aside>
     <main>
-      <h5 class="subtitle">saishowaguu</h5>
+      <!-- <h5 class="subtitle">saishowaguu</h5> -->
       <h1>最初はグー</h1>
-      <h5 class="subtitle">jankenpon!!</h5>
+      <!-- <h5 class="subtitle">jankenpon!!</h5> -->
       <h2>じゃんけんぽん！！</h2>
       <h5 class="subtitle">Rock, Paper, Scissors</h5>
       <h2 class="game-message">Choose Your Game!</h2>
       <div class="game-result hidden">
       </div>
       <div class="game-buttons">
-        <button class="classic">Classic Mode</button>
-        <button class="variant">New Mode</button>
+        <button class="classic">
+          <h2>Classic</h2>
+          <h4>Paper > Rock</h4>
+          <h4>Rock > Scissors</h4>
+          <h4>Scissors > Paper</h4>
+        </button>
+        <button class="variant">
+          <h2>Edo Battle</h2>
+          <h4>Brush > Oni & Shinobi</h4>
+          <h4>Samurai > Brush & Oni</h4>
+          <h4>Ronin > Samurai & Brush</h4>
+          <h4>Shinobi > Samurai & Ronin</h4>
+          <h4>Oni > Ronin, Shinobi</h4>
+        </button>
       </div>
       <div class="game-board hidden">
         <button class="selection" id="rock">
@@ -68,8 +80,8 @@
       </div> 
     </main>
     <aside class="player-2">
-      <h3>Player 2</h3>
       <h3>💻</h3>
+      <h3 class="player-name">Player 2</h3>
       <p class="c_wins">Wins: 0</p>
     </aside>
     <script src="player.js"></script>

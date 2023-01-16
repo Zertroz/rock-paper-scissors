@@ -9,21 +9,43 @@ body {
 }
 
 main {
-  border: black solid 2px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   height: 98vh;
-  width: 75vw;
+  width: 80%;
 }
 
 aside {
-  width: 25vw;
+  width: 20%;
   height: 98vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+aside > h3 {
+  font-size: 25px;
+  margin-bottom: 0%;
+}
+
+.player-name {
+  margin-bottom: 30px;
+}
+
+.player-1, .player-2 {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-image: linear-gradient(rgb(246, 246, 246), rgb(207, 201, 165));
+}
+
+.wins {
+  margin-bottom: 50px;
+}
+
+.new-game-btn {
+  font-size: 30px;
 }
 
 h1 {
@@ -34,18 +56,33 @@ h2 {
   font-size: 35px
 }
 
+h4 {
+  margin: 5%;
+}
+
 h5, h1, h2 {
   margin: 0%;
 }
 
 button {
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .game-buttons {
-  margin-top: 25%;
+  margin-top: 10%;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.game-buttons > button {
+  width: 45%; 
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .game-board, .game-board-variant {
@@ -58,6 +95,10 @@ button {
 .selection {
   height: 20vh;
   width: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 img {
@@ -67,11 +108,14 @@ img {
 
 button > p {
   font-size: 36px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  margin-top: 0%;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 rgb(255, 255, 255), 0 1px 0 rgb(255, 255, 255), -1px 0 0 rgb(255, 255, 255);
 }
 
 button > h5 {
-  font-size: 15px;
+  margin-top: 10px;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 rgb(255, 255, 255), 0 1px 0 rgb(255, 255, 255), -1px 0 0 rgb(255, 255, 255);
 }
 
