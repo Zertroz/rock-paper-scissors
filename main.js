@@ -46,10 +46,9 @@ function makeChoices(cSelection) {
   var pSelection
   if (currentGame.choices.includes(event.target.parentNode.id)) {
     pSelection = currentGame.makePlayerChoice(event.target.parentNode.id)
+    currentGame.checkWin(pSelection, cSelection)
   } else if (currentGame.choices.includes(event.target.id)) {
     pSelection = currentGame.makePlayerChoice(event.target.id)
-  }
-  if (currentGame.choices.includes(pSelection)) {
     currentGame.checkWin(pSelection, cSelection)
   }
   showWinner(pSelection, cSelection)
