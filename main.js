@@ -5,7 +5,7 @@ var cWins = document.querySelector('.c_wins')
 var classicGame = document.querySelector('.classic')
 var variantGame = document.querySelector('.variant')
 var gameButtons = document.querySelector('.game-buttons')
-var subtitle = document.querySelector('h2')
+var subtitle = document.querySelector('.game-message')
 var newGameBtn = document.querySelector('.new-game-btn')
 var selectionElements = document.querySelectorAll('.selection')
 var gameResult = document.querySelector('.game-result')
@@ -31,7 +31,7 @@ function startClassic() {
   hide(gameButtons)
   show(gameBoard)
   show(newGameBtn)
-  subtitle.innerText = 'Choose Your Fighter!'
+  subtitle.innerText = '始め！！'
 }
 
 function startVariant() {
@@ -39,12 +39,16 @@ function startVariant() {
   hide(gameButtons)
   show(gameBoardVar)
   show(newGameBtn)
-  subtitle.innerText = 'Choose Your Fighter!'
+  subtitle.innerText = '始め！！'
 }
 
 function makeChoices(cSelection) {
-  var pSelection = currentGame.makePlayerChoice(event.target.id)
-  if (currentGame.choices.includes(pSelection)) {
+  var pSelection
+  if (currentGame.choices.includes(event.target.parentNode.id)) {
+    pSelection = currentGame.makePlayerChoice(event.target.parentNode.id)
+    currentGame.checkWin(pSelection, cSelection)
+  } else if (currentGame.choices.includes(event.target.id)) {
+    pSelection = currentGame.makePlayerChoice(event.target.id)
     currentGame.checkWin(pSelection, cSelection)
   }
   showWinner(pSelection, cSelection)
@@ -66,13 +70,12 @@ function showWinner(pSelection, cSelection) {
 }
 
 function displayWin() {
-  show(gameResult)
   if (currentGame.result === 'win') {
-    gameResult.innerHTML = `<h3>You Won!</h3>`
+    subtitle.innerHTML = `You Won!`
   } else if (currentGame.result === 'lose') {
-    gameResult.innerHTML = `<h3>You Lose!</h3>`
+    subtitle.innerHTML = `You Lose!`
   } else if (currentGame.result === 'draw') {
-    gameResult.innerHTML = `<h3>Draw!</h3>`
+    subtitle.innerHTML = `Draw!`
   }
 }
 
@@ -80,7 +83,7 @@ function resetGameBoard () {
   for (var i = 0; i < 8; i++) {
     show(selectionElements[i])
   }
-  hide(gameResult)
+  subtitle.innerHTML = '始め！！'
 }
 
 function returnNewGame() {

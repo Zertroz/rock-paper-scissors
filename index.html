@@ -4,39 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors</title>
   </head>
   <body>
     <aside class="player-1">
-      <h3>Player 1</h3>
+      <h3>🤓</h3>
+      <h3 class="player-name">Player 1</h3>
       <p class="wins">Wins: 0</p>
       <button class="new-game-btn hidden">New Game</button>
     </aside>
     <main>
-      <h1>Rock, Paper, Scissors</h1>
-      <h2>Choose Your Game!</h2>
+      <h5 class="subtitle">Rock, Paper, Scissors</h5>
+      <h1>最初はグー</h1>
+      <h2>じゃんけんぽん！！</h2>
+      <h2 class="game-message">Choose Your Game!</h2>
       <div class="game-result hidden">
       </div>
       <div class="game-buttons">
-        <button class="classic">Classic Mode</button>
-        <button class="variant">New Mode</button>
+        <button class="classic">
+          <h2>Classic</h2>
+          <h4>Paper > Rock</h4>
+          <h4>Rock > Scissors</h4>
+          <h4>Scissors > Paper</h4>
+        </button>
+        <button class="variant">
+          <h2>Edo Battle</h2>
+          <h4>Brush > Oni & Shinobi</h4>
+          <h4>Samurai > Brush & Oni</h4>
+          <h4>Ronin > Samurai & Brush</h4>
+          <h4>Shinobi > Samurai & Ronin</h4>
+          <h4>Oni > Ronin, Shinobi</h4>
+        </button>
       </div>
       <div class="game-board hidden">
-        <p class="selection" id="rock">Rock</p>
-        <p class="selection" id="paper">Paper</p>
-        <p class="selection" id="scissors">Scissors</p>
+        <button class="selection" id="rock">
+          <p>グー</p>
+          <h5>Rock</h5>
+        </button>
+        <button class="selection" id="paper">
+          <p>パー</p>
+          <h5>Paper</h5>
+        </button>
+        <button class="selection" id="scissors">
+          <p>チョキ</p>
+          <h5>Scissors</h5>
+        </button>
       </div>
       <div class="game-board-variant hidden">
-        <p class="selection" id="brush">Brush</p>
-        <p class="selection" id="samurai">Samurai</p>
-        <p class="selection" id="ronin">Ronin</p>
-        <p class="selection" id="shinobi">Shinobi</p>
-        <p class="selection" id="oni">Oni</p>
+        <button class="selection" id="brush">
+          <p>筆</p>
+          <h5>Brush</h5>
+        </button>
+        <button class="selection" id="samurai">
+          <p>侍</p>
+          <h5>Samurai</h5>
+        </button>
+        <button class="selection" id="ronin">
+          <p>浪人</p>
+          <h5>Ronin</h5>
+        </button>
+        <button class="selection" id="shinobi">
+          <p>忍び</p>
+          <h5>Shinobi</h5>
+        </button>
+        <button class="selection" id="oni">
+          <p>鬼</p>
+          <h5>Oni</h5>
+        </button>
       </div> 
     </main>
     <aside class="player-2">
-      <h3>Player 2</h3>
+      <h3>💻</h3>
+      <h3 class="player-name">Player 2</h3>
       <p class="c_wins">Wins: 0</p>
     </aside>
     <script src="player.js"></script>

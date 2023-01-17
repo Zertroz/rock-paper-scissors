@@ -1,15 +1,172 @@
+* {
+  font-family: 'Shippori Mincho B1', serif;
+}
+
 body {
+  display: flex;
+  justify-content: space-around;
+  background-image: linear-gradient(#fbf6c3, #d8c6a2);  
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 98vh;
+  width: 80%;
+}
+
+aside {
+  width: 20%;
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+aside > h3 {
+  font-size: 25px;
+  margin-bottom: 0%;
+}
+
+.player-name {
+  margin-bottom: 30px;
+}
+
+.player-1, .player-2 {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-image: linear-gradient(rgb(246, 246, 246), rgb(207, 201, 165));
+}
+
+.wins {
+  margin-bottom: 50px;
+}
+
+.new-game-btn {
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 35px
+}
+
+h4 {
+  margin: 5%;
+}
+
+h5, h1, h2 {
+  margin: 0%;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-buttons {
+  margin-top: 10%;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.game-buttons > button {
+  width: 45%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.game-board, .game-board-variant {
+  margin-top: 15%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-main {
-  text-align: center;
+.selection {
+  height: 20vh;
+  width: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.game-board, .game-board-variant {
-  display: flex;
-  justify-content: space-between;
+img {
+  height: 100%;
+  width: 100%;
+}
+
+button > p {
+  font-size: 36px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  margin-top: 0%;
+  text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 rgb(255, 255, 255), 0 1px 0 rgb(255, 255, 255), -1px 0 0 rgb(255, 255, 255);
+}
+
+button > h5 {
+  font-size: 16px;
+  text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 rgb(255, 255, 255), 0 1px 0 rgb(255, 255, 255), -1px 0 0 rgb(255, 255, 255);
+}
+
+#rock {
+  background: url(./src/rock.jpeg);
+  background-size: cover;
+}
+
+#paper {
+  background: url(./src/lines-paper.jpeg);
+  background-size: cover;
+}
+
+#scissors {
+  background: url(./src/scissors\ copy.jpeg);
+  background-size: cover;
+}
+
+#brush {
+  background: url(./src/brush.jpeg);
+  background-size: cover;
+}
+
+#samurai {
+  background: url(./src/samurai.jpeg);
+  background-size: cover;
+}
+
+#ronin {
+  background: url(./src/ronin.jpg);
+  background-size: cover;
+}
+
+#shinobi {
+  background: url(./src/shinobi.jpg);
+  background-size: cover;
+}
+
+#oni {
+  background: url(./src/oni.jpeg);
+  background-size: cover;
 }
 
 .hidden {
